@@ -38,8 +38,7 @@ describe('js-day1-basic-assessment', function() {
   })
   describe('Problem 4 - greatestFear', function () {
     it('greatestFear variable should exist', function () {
-      expect(greatestFear).toBeDefined()
-      expect(typeof greatestFear).toBe('undefined')
+      expect(greatestFear).toBeUndefined()
     })
   })
   describe('Problem 5 - devMountainGoal', function () {
@@ -54,7 +53,7 @@ describe('js-day1-basic-assessment', function() {
 		it('should exist', function() {
 			expect(greeting).toBeDefined()
 		})
-		it('should be made with a functon delceration', function() {
+		it('should be made with a function declaration', function() {
 			let str = greeting.toString()
 			let match = !!str.match(/function greeting\s?\(/)
 			expect(match).toBe(true)
@@ -71,7 +70,7 @@ describe('js-day1-basic-assessment', function() {
 		it('should exist', function() {
 			expect(newGreeting).toBeDefined()
 		})
-		it('should be made with an anonymous functon assignment', function() {
+		it('should be made with an anonymous function assignment', function() {
 			let str = newGreeting.toString()
 			let match = !!str.match(/function\s*\(/)
 			expect(match).toBe(true)
@@ -84,24 +83,7 @@ describe('js-day1-basic-assessment', function() {
 		})
 	})
 
-	describe('Problem 8 - finalGreeting', function() {
-		it('should exist', function() {
-			expect(finalGreeting).toBeDefined()
-		})
-		it('should be made with an arrow function assignment', function() {
-			let str = finalGreeting.toString()
-			let match = !!str.match(/=>/)
-			expect(match).toBe(true)
-		})
-		it('should return "Hello, Trogdor" if passed "Trogdor"', function() {
-			expect(finalGreeting('Trogdor')).toBe('Hello, Trogdor')
-		})
-		it('should return "Hello, undefined" if passed nothing', function() {
-			expect(finalGreeting()).toBe('Hello, undefined')
-		})
-	})
-
-	describe('Problem 9 - ', function() {
+	describe('Problem 8 - ', function() {
 		it('groceries should exist', function() {
 			expect(groceries).toBeDefined()
 		})
@@ -112,7 +94,7 @@ describe('js-day1-basic-assessment', function() {
 		})
 	})
 
-	describe('Problem 10 - ', function() {
+	describe('Problem 9 - ', function() {
 		it('dog should exist with the right properties', function() {
 			expect(dog).toBeDefined()
 			expect(typeof dog.name).toEqual('string')
@@ -125,7 +107,7 @@ describe('js-day1-basic-assessment', function() {
 		})
 	})
 
-	describe('Problem 11 - ', function() {
+	describe('Problem 10 - ', function() {
 		it('nameCheck should exist', function() {
 			expect(nameCheck).toBeDefined()
 			expect(typeof nameCheck).toBe('function')
@@ -141,7 +123,7 @@ describe('js-day1-basic-assessment', function() {
 		})
 	})
 
-	describe('Problem 12 - ', function() {
+	describe('Problem 11 - ', function() {
 		it('add should exist', function() {
 			expect(add).toBeDefined()
 		})
@@ -154,27 +136,28 @@ describe('js-day1-basic-assessment', function() {
 		})
 	})
 
-	describe('Problem 13 - ', function() {
+	describe('Problem 12 - ', function() {
 		it('faveColorFinder should exist', function() {
-			expect(invoker).toBeDefined()
+			expect(faveColorFinder).toBeDefined()
+			expect(typeof faveColorFinder).toBe('function')
 		})
 		it('faveColorFinder should return the correct string when passed red', function() {
-			expect(nameCheck('Steven')).toEqual('red is a great color')
+			expect(faveColorFinder('red')).toEqual('red is a great color')
 		})
 		it('faveColorFinder should return the correct string when passed green', function() {
-			expect(nameCheck('Bryan')).toEqual('green is a solid favorite color')
+			expect(faveColorFinder('green')).toEqual('green is a solid favorite color')
 		})
 		it('faveColorFinder should return the correct string when passed black', function() {
-			expect(nameCheck('Joe')).toEqual('so trendy')
+			expect(faveColorFinder('black')).toEqual('so trendy')
 		})
-		it('nameCheck should return the correct string when passed any other color', function() {
-			expect(nameCheck('orange')).toEqual(
+		it('faveColorFinder should return the correct string when passed any other color', function() {
+			expect(faveColorFinder('orange')).toEqual(
 				'you need to evaluate your favorite color choice'
 			)
 		})
 	})
 
-	describe('Problem 14 - ', function() {
+	describe('Problem 13 - ', function() {
 		it('globalScope should contain only variables accessible in the global scope', function() {
 			let containsGlobals = arrayIncludes(globalScope, ['duck'])
 			let containsOutOfScopeVars =
@@ -206,7 +189,7 @@ describe('js-day1-basic-assessment', function() {
 		})
 	})
 
-	describe('Problem 15 - ', function() {
+	describe('Problem 14 - ', function() {
 		let testAge = age
 		it('age should exist', function() {
 			expect(age).toBeDefined()
